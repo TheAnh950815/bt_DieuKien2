@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gamePuzzle</title>
+</head>
+<body>
+<p id="end" style="width: 550px; height: 850px; border: 2px">
+    <img onclick="mau_1()" alt="1" id="mau1-1" src="images\mau1-1.jpg"><br>
+    <img onclick="mau_2()" alt="2" id="mau1-2" src="images\mau1-2.jpg"><br>
+    <img onclick="mau_3()" alt="3" id="mau1-3" src="images\mau1-3.jpg">
+</p>
+</body>
+</html>
+<style></style>
+<script>
+    function mau_1() {
+        let imgSrc = document.getElementById('mau1-1').getAttribute('src')
+        if (imgSrc == "images\\mau1-1.jpg") {
+            document.getElementById('mau1-1').src = "images\\mau2-1.jpg";
+        } else if (imgSrc == "images\\mau2-1.jpg") {
+            document.getElementById('mau1-1').src = "images\\mau3-1.jpg";
+        } else {
+            document.getElementById('mau1-1').src = "images\\mau1-1.jpg";
+        }
+        endGame()
+    }
+    function mau_2() {
+        let imgSrc2 = document.getElementById('mau1-2').getAttribute('src');
+        if (imgSrc2 == "images\\mau1-2.jpg") {
+            document.getElementById('mau1-2').src = "images\\mau2-2.jpg";
+        } else if (imgSrc2 == "images\\mau2-2.jpg") {
+            document.getElementById('mau1-2').src = "images\\mau3-2.jpg";
+        } else {
+            document.getElementById('mau1-2').src = "images\\mau1-2.jpg";
+        }
+        endGame()
+    }
+    function mau_3() {
+        let imgSrc3 = document.getElementById('mau1-3').getAttribute('src');
+        if (imgSrc3 == "images\\mau1-3.jpg") {
+            document.getElementById('mau1-3').src = "images\\mau2-3.jpg";
+        } else if (imgSrc3 == "images\\mau2-3.jpg") {
+            document.getElementById('mau1-3').src = "images\\mau3-3.jpg";
+        } else {
+            document.getElementById('mau1-3').src = "images\\mau1-3.jpg";
+        }
+        endGame()
+    }
+
+    function endGame() {
+        let mau1 = document.getElementById('mau1-1').getAttribute('src');
+        let mau2 = document.getElementById('mau1-2').getAttribute('src');
+        let mau3 = document.getElementById('mau1-3').getAttribute('src');
+        if ((mau1 == "images\\mau1-1.jpg" && mau2 == "images\\mau1-2.jpg" && mau3 == "images\\mau1-3.jpg")
+            || (mau1 == "images\\mau2-1.jpg" && mau2 == "images\\mau2-2.jpg" && mau3 == "images\\mau2-3.jpg")
+            || (mau1 == "images\\mau3-1.jpg" && mau2 == "images\\mau3-2.jpg" && mau3 == "images\\mau3-3.jpg")) {
+            document.getElementById('end').style.lineHeight = "0";
+        } else {
+            document.getElementById('end').style.lineHeight = "1";
+        }
+    }
+</script>

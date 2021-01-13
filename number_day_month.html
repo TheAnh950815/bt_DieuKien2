@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Day of month</title>
+</head>
+<body>
+<label><input id="month" type="text" width="200px"></label>
+<label><input id="tinh" type="button" value="Tính số ngày" onclick="tinh()"></label>
+<div id="result" style=""></div>
+</body>
+</html>
+<script>
+    function tinh() {
+        let month = parseInt(document.getElementById("month").value);
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 9:
+            case 12:
+                document.getElementById('result').innerHTML = "Tháng " +  document.getElementById('month').value + " có 31 ngày";
+                break;
+            case 4:
+            case 6:
+            case 8:
+            case 10:
+                document.getElementById('result').innerHTML = "Tháng " +  document.getElementById('month').value + " có 30 ngày";
+                break;
+            case 2:
+                document.getElementById('result').innerHTML = 'Tháng 2 có 28 hoặc 29 ngày';
+                break;
+            default:
+                document.getElementById('result').innerHTML ="không biết!";
+        }
+    }
+</script>
